@@ -1,0 +1,8 @@
+## Bu Materyalde Bulunmayan Önemli Konular
+
+* Öncelikle her makine öğrenmesi probleminde olduğu gibi model seçimi ve modellerin hyperparameter optimizasyon (model seçiminin bir parçası) için gerekli olan CV (Cross Fold Validation) tekniğinin zaman serilerine uygulanması farklı şekilde yapılmaktadır. (Zaman kavramı bir düzen ve sürerlik barındırdığından dolayı) Bununla alakalı bir materyal isterseniz lütfen konuşalım.
+* Çok daha fazla feature üretmek mümkün. Zaman serilerinde üretilebilecek ve kullanılabilecek değişkenler için (bunların bir çoğu hepsi değilse SQL olarak çok kolay yazılabilir) Python `tsfresh` kütüphanesinin dokümantasyonunu incelemenizi tavsiye ederim.
+  * Biz burada çok temel `max`,`min`,`avg` vb aggregate window fonksiyonlarıyla ilerledik.
+  * Ama `tsfresh`içerisinde **longest strike below mean/variance/median** gibi daha karmaşık event counting bazlı değişknelerle karşılaşacaksınız. Bu tarz değişkenler bazı problem kümeleri için oldukça etkili olabilir.
+* Bir diğer tarafta ise NYC Bike verisi için bazı Spatial featurelar arasına eklemek mümkün olacaktır. Örneğin her bir kiralama istasyonununun kendisine en yakın 5 noktadaki ortalama min/max sayıları bölgeye ilişkin özellikle yeni açılan istasyonları handle etmek için önemli bir girdi oluşturacaktır.
+* Tatil günleri ve özel günler bir çok zaman serisi probleminde önemlidir. Burada DW ortamından alınabilecek bir time dimension veya python ile kurulabilecek bir holiday paketi analizlerde kullanılabilir.
